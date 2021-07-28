@@ -1431,9 +1431,9 @@ class JointLimit(URDFType):
 
     Parameters
     ----------
-    effort : float
+    effort, optional : float
         The maximum joint effort (N for prismatic joints, Nm for revolute).
-    velocity : float
+    velocity, optional : float
         The maximum joint velocity (m/s for prismatic joints, rad/s for
         revolute).
     lower : float, optional
@@ -1443,14 +1443,14 @@ class JointLimit(URDFType):
     """
 
     _ATTRIBS = {
-        'effort': (float, True),
-        'velocity': (float, True),
+        'effort': (float, False),
+        'velocity': (float, False),
         'lower': (float, False),
         'upper': (float, False),
     }
     _TAG = 'limit'
 
-    def __init__(self, effort, velocity, lower=None, upper=None):
+    def __init__(self, effort=None, velocity=None, lower=None, upper=None):
         self.effort = effort
         self.velocity = velocity
         self.lower = lower
