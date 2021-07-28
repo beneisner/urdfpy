@@ -1464,6 +1464,8 @@ class JointLimit(URDFType):
 
     @effort.setter
     def effort(self, value):
+        if value is not None:
+            value = float(value)
         self._effort = float(value)
 
     @property
@@ -1474,6 +1476,8 @@ class JointLimit(URDFType):
 
     @velocity.setter
     def velocity(self, value):
+        if value is not None:
+            value = float(value)
         self._velocity = float(value)
 
     @property
